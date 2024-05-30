@@ -1,15 +1,14 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Query
 from filter import filter_large_csv
 
 app = FastAPI()
 
-@app.post("/filter")
-async def filter_handler(request: Request):
-    data = await request.json()
-    origin = data['query']['origin']
-    destination = data['query']['destination']
-    date = data['query']['date']
-    
+@app.get("/filter")
+async def filter_handler(
+    origin: str = Query(..., description="Origin airport code"),
+    destination: str = Query(..., description="Destination airport code"),
+    date: str = Query(..., description="Departure date")
+):
     # Specify path to the large CSV file
     file_path = 'flights_with_freight_capacity.csv'
     
