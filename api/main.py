@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Query
-from filter import filter_large_csv
+from .filter import filter_large_csv
 
 app = FastAPI()
 
