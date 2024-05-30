@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Query
 import pandas as pd
+import asyncio  # Import asyncio library
 
 app = FastAPI()
 
