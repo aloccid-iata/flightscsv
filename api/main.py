@@ -10,8 +10,7 @@ def filter_large_csv(file_path, origin, destination, date, chunk_size=10000):
         # Apply filter
         filtered_chunk = chunk[
             (chunk['from_airport_code'] == origin) & 
-            (chunk['dest_airport_code'] == destination) & 
-            (chunk['departure_time'].str.startswith(date))
+            (chunk['dest_airport_code'] == destination) 
         ]
         filtered_data.append(filtered_chunk)
     # Concatenate all filtered chunks
