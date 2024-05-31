@@ -2,20 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/main.py",
-      "use": "@vercel/python",
-      "config": {
-        "runtime": "python3.9"
-      }
+      "src": "api/main.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/filter",
-      "dest": "api/main.py"
+      "src": "/api/(.*)",
+      "dest": "/api/main.js"
     }
-  ],
-  "env": {
-    "APP_MODULE": "main:app"
-  }
+  ]
 }
