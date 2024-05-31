@@ -14,5 +14,8 @@
       "src": "/api/filter",
       "dest": "api/main.py"
     }
-  ]
+  ],
+  "env": {
+    "APP_MODULE": "main:app"
+  }
 }
