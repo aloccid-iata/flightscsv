@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Query
+import uvicorn
 import pandas as pd
 import logging
 
