@@ -25,7 +25,7 @@ async def filter_handler(
     date: str = Query(..., description="Departure date")
 ):
     # Specify path to the large CSV file
-    file_path = 'flights_with_freight_capacity.csv'
+    file_path = '../flights_with_freight_capacity.csv'
     
     # Filter the data
     filtered_data = filter_large_csv(file_path, origin, destination, date)
