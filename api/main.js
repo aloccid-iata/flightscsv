@@ -1,10 +1,11 @@
 const express = require('express');
 const fs = require('fs');
+const path = require('path');
 const csv = require('csv-parser');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const CSV_FILE_PATH = './flights_with_freight_capacity.csv';
+const CSV_FILE_PATH = path.join(__dirname, '..', 'flights_with_freight_capacity.csv');
 
 function filterCSV(filePath, origin, destination, date, callback) {
     const results = [];
